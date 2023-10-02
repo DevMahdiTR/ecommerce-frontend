@@ -1,7 +1,81 @@
-.header{    
-    
+.header {
+    position: relative;
     padding: 0.5em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    .header__left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            cursor: pointer;
+        
+        }
+    }
+
+    .header__middle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style-type: none;
+            gap: 2em;
+            transition: all var(--duration-extra-short) ease-in-out;
+            li {
+                padding: 0.3em;
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    font-weight: 400;
+                    font-size: 0.985em;
+                    font-family: var(--font-family-1);
+                    transition: all var(--duration-short) ease-in-out;
+                    text-transform: none;
+
+                    &:hover{
+                        color: var(--color-primary-hover);
+                    }
+                }
+            }
+        }
+    }
+    .header__left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+
+        .header__icons {
+            font-size: 1.3em;
+            color : var(--h-text-color);
+            cursor: pointer;
+            transition: all var(--duration-short) ease-in-out;
+            &:hover{
+                color: var(--color-primary-hover);
+            }
+            
+        }
+    }
+    .header__search-hidden{
+        position: absolute;
+        width: 0;
+        height: 100vh;
+        background-color: aqua;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+        transition: all var(--duration-long) ease-in-out;
+    }
+    .show_search{
+        transform: translateX(0%);
+        width: 400px;
+    }
 }

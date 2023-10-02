@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -11,4 +13,36 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+:root{
+  --font-family-1 : 'Poppins', sans-serif;
+  --font-family-2 : 'Roboto', sans-serif;
+  --font-family-3 : 'Open Sans', sans-serif;
+  --font-family-4 : 'Lato', sans-serif;
+  --font-family-5 : 'Montserrat', sans-serif;
+  --font-family-6 : 'Raleway', sans-serif;
+  --duration-extra-long: .6s;
+  --duration-long: .4s;
+  --duration-short: .2s;
+  --duration-extra-short: .1s;
+  --border-radius: 5px;
+  --border-radius-small: 3px;
+  --border-radius-large: 10px;
+  --border-radius-extra-large: 20px;
+  --box-shadow: 0 0 10px rgba(0,0,0,.1);
+  --box-shadow-hover: 0 0 10px rgba(0,0,0,.2);
+  --box-shadow-active: 0 0 10px rgba(0,0,0,.3);
+  --box-shadow-focus: 0 0 10px rgba(0,0,0,.4);
+  --box-shadow-extra: 0 0 10px rgba(0,0,0,.5);
+  --box-shadow-extra-hover: 0 0 10px rgba(0,0,0,.6);
+  --box-shadow-extra-active: 0 0 10px rgba(0,0,0,.7);
+  --box-shadow-extra-focus: 0 0 10px rgba(0,0,0,.8);
+  --box-shadow-extra-extra: 0 0 10px rgba(0,0,0,.9);
+  --box-shadow-extra-extra-hover: 0 0 10px rgba(0,0,0,1);
+  --color-primary: #56cfe1;
+  --color-primary-hover: #56cfe1;
+  --h-text-color: #222222;
+  
+
+
 }
