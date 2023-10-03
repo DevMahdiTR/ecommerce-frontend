@@ -1,4 +1,4 @@
-import { SearchTypes } from '../types.index';
+import { SearchTypes } from '../types/index';
 
 export const ToggleSearch = (data) => {
     return {

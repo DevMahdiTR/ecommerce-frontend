@@ -32,7 +32,7 @@ code {
   --box-shadow: 0 0 10px rgba(0,0,0,.1);
   --box-shadow-hover: 0 0 10px rgba(0,0,0,.2);
   --box-shadow-active: 0 0 10px rgba(0,0,0,.3);
-  --box-shadow-focus: 0 0 10px rgba(0,0,0,.4);
+  --box-shadow-focus: 0 5px 10px rgba(0,0,0,.4);
   --box-shadow-extra: 0 0 10px rgba(0,0,0,.5);
   --box-shadow-extra-hover: 0 0 10px rgba(0,0,0,.6);
   --box-shadow-extra-active: 0 0 10px rgba(0,0,0,.7);
@@ -42,6 +42,8 @@ code {
   --color-primary: #56cfe1;
   --color-primary-hover: #56cfe1;
   --h-text-color: #222222;
+  --text-color: #878787;
+  --title-cl-second: #222;
   
 
 

@@ -1,0 +1,17 @@
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:rgba(0,0,0,.7);;
+    z-index: 20;
+    opacity: 1;
+    visibility: visible;
+    transition: all var(--duration-long) ease-in-out;
+}
+
+.overlay-not-visible {
+    opacity: 0;
+    visibility: hidden;
+}

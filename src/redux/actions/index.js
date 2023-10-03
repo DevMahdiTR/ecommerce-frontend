@@ -1,4 +1,4 @@
-import *  as SearchActions from './actionTypes';
+import *  as SearchActions from './search.actions';
 
 
 export {
