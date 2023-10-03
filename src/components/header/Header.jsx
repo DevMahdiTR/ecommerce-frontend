@@ -1,13 +1,18 @@
 import './header.scss';
 import { logo } from '../../assets/index';
 import { HeartOutlined, SearchOutlined, ShoppingCartOutlined, UserOutlined, CloseOutlined } from '@ant-design/icons';
+
+
+
 const Header = () => {
-
-
 
     const showHidenSearch = () => {
         const searchHidden = document.querySelector('.header__search-hidden');
         searchHidden.classList.toggle('show_search');
+    }
+    
+    const onClickSearch = () => {
+        showHidenSearch();
     }
     return (
         <div className='header'>
@@ -56,11 +61,11 @@ const Header = () => {
                     <ShoppingCartOutlined className='header__icons' />
                 </div>
             </div>
-            <div 
+            <div
                 className="header__search-hidden"
-                onAuxClick={showHidenSearch}
+                
             >
-                <CloseOutlined onClick={showHidenSearch}/>
+                <CloseOutlined onClick={onClickSearch} />
             </div>
         </div>
     )
