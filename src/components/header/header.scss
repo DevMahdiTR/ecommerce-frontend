@@ -21,7 +21,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        ul {
+        position: relative;
+        .header__middle-ul {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -53,80 +54,89 @@
                     display: flex;
                     visibility: hidden;
                     flex-direction: row;
-                    align-items: flex-start;
-                    background-color:#fff;
-                    box-shadow: var( --box-shadow-focus);
-                    border-radius:  0 0 10px 10px;
+                    background-color: #fff;
+                    box-shadow: var(--box-shadow-focus);
+                    border-radius: 0 0 10px 10px;
                     top: 150%;
-                    left: 22%;
+                    left: 57%;
+                    transform: translateX(-50%);
                     opacity: 0;
-                    padding: 1em;
-                    gap: 5em;
-                    transition: all var(--duration-long) ease-in-out;
-                    
-                    ul{
+                    padding: 1.5em 2em 1em 2em;
+                    gap: 1.5em;
+                    transition: all var(--duration-short) ease-in-out;
+                    .header__middle__content-container {
                         display: flex;
                         flex-direction: column;
-                        align-items: center;
-                        padding: 0;
-                        margin: 0;
-                        gap: 0;
-                        li{
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            border-bottom: 1px solid #ccc;
-                            a{
-                                padding: 0.5em;
-                                font-size: 0.9em;
+                        width: 200px;
+                        .header__middle__title{
+                            span{
+                                font-size: 0.85rem;
+                                font-weight: 500;
                                 font-family: var(--font-family-1);
-                                color: var(--text-color);
-                                text-decoration: none;
-                                &:hover{
-                                    color: var(--color-primary-hover);
-                                }
-
-                                
+                                color: var(--title-cl-second);
                             }
-                            &:last-child{
-                                border: none;
+                            
+                        }
+                        .line{
+                            width: 100%;
+                            height: 1px;
+                            background-color: #ccc;
+                            margin: 0.5em 0;
+                        }
+                        .header__middle__list {
+                            align-self: flex-start;
+                            ul{
+                                list-style-type: none;
+                                padding: 0;
+                                display: flex;
+                                flex-direction: column;
+                                
+                                li{
+                                    padding: 6.5px 0;
+                                    a{
+                                        text-decoration: none;
+                                        color : var(--text-color);
+                                        font-size: 0.8rem;
+                                        align-self: flex-start;
+                                        &:hover{
+                                            color: var(--color-primary-hover);
+                                        }
+                                    }
+                                }
                             }
                         }
-                        
                     }
+
                     &:hover {
                         top: 100%;
                         opacity: 1;
                         visibility: visible;
                     }
-                    .header__middle__special{
+                    .header__middle__special {
                         display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 2.5em;
-                        .header__middle__speicial{
+                        gap : 1.5em;
+                        .header__middle__speicial {
                             display: flex;
-                            align-items: center;
                             flex-direction: row;
-                            width: 250px;
-                            height: auto;
                             overflow: hidden;
                             position: relative;
-                            img{
+                            width: 250px;
+                            height: 90%;
+                            img {
                                 width: 100%;
                                 height: 100%;
                                 object-fit: cover;
                                 transition: all var(--duration-long) ease-in-out;
-                                &:hover{
+                                &:hover {
                                     transform: scale(1.1);
                                 }
                             }
-                            .header__middle__btn{
+                            .header__middle__btn {
                                 width: 150px;
                                 position: absolute;
                                 content: "";
                                 margin: auto;
-                                bottom: 20px;
+                                bottom: 5%;
                                 left: 50%;
                                 transform: translateX(-50%);
                                 border: none;
@@ -138,19 +148,17 @@
                                 font-family: var(--font-family-1);
                                 box-shadow: 1px 1px #0000001a;
 
-                                transition: 
+                                transition:
                                     background-color var(--duration-short) ease-in-out,
                                     color var(--duration-short) ease-in-out;
-                            
-                                &:hover{
+
+                                &:hover {
                                     background-color: var(--title-cl-second);
                                     color: #fff;
                                 }
                             }
-
                         }
                     }
-                    
                 }
             }
         }

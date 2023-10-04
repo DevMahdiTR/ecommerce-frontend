@@ -1,5 +1,5 @@
 import './header.scss';
-import { logo , men , women} from '../../assets/index';
+import { logo, men, women } from '../../assets/index';
 import { HeartOutlined, SearchOutlined, ShoppingCartOutlined, UserOutlined, CloseOutlined } from '@ant-design/icons';
 import { SearchActions } from '../../redux/index'
 import { connect } from 'react-redux';
@@ -27,43 +27,86 @@ const Header = () => {
                 <img src={logo} alt='logo' />
             </div>
             <div className='header__middle'>
-                <ul>
+                <ul className='header__middle-ul'>
                     <li>
                         <a href="#">
                             Home
                         </a>
                         <div className="header__middle__content">
-                            <ul>
-                                <li>
-                                    <a href="">Pc Portable</a>
-                                </li>
-                                <li>
-                                    <a href="">Pc Portable</a>
-                                </li>
-                                <li>
-                                    <a href="">Pc Portable</a>
-                                </li>
-                                <li>
-                                    <a href="">Pc Portable</a>
-                                </li>
-                                <li>
-                                    <a href="">Pc Portable</a>
-                                </li>
-                                <li>
-                                    <a href="">Pc Portable</a>
-                                </li>
-                                <li>
-                                    <a href="">Pc Portable</a>
-                                </li>
-                                <li>
-                                    <a href="">Pc Portable</a>
-                                </li>
-                                <li>
-                                    <a href="">Pc Portable</a>
-                                </li>
-                                
-
-                            </ul>
+                            <div className='header__middle__content-container'>
+                                <div className='header__middle__title'>
+                                    <span>Informatique</span>
+                                </div>
+                                <div className='line'></div>
+                                <div className='header__middle__list'>
+                                    <ul>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='header__middle__content-container'>
+                                <div className='header__middle__title'>
+                                    <span>Informatique</span>
+                                </div>
+                                <div className='line'></div>
+                                <div className='header__middle__list'>
+                                    <ul>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pc Portable</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                             <div className="header__middle__special">
                                 <div className="header__middle__speicial">
                                     <img src={women} alt="" />
@@ -74,7 +117,6 @@ const Header = () => {
                                     <button className='header__middle__btn'>Men</button>
                                 </div>
                             </div>
-
                         </div>
 
                     </li>
