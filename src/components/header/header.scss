@@ -44,7 +44,7 @@
                         color: var(--color-primary-hover);
                     }
                     &:hover + .header__middle__content {
-                        top: 100%;
+                        top: 101%;
                         opacity: 1;
                         visibility: visible;
                     }
@@ -67,10 +67,10 @@
                     .header__middle__content-container {
                         display: flex;
                         flex-direction: column;
-                        width: 200px;
+                        width: 150px;
                         .header__middle__title{
                             span{
-                                font-size: 0.85rem;
+                                font-size: 0.9rem;
                                 font-weight: 500;
                                 font-family: var(--font-family-1);
                                 color: var(--title-cl-second);
@@ -93,14 +93,47 @@
                                 
                                 li{
                                     padding: 6.5px 0;
+                                    position: relative;
                                     a{
                                         text-decoration: none;
                                         color : var(--text-color);
-                                        font-size: 0.8rem;
+                                        font-size: 0.85rem;
                                         align-self: flex-start;
                                         &:hover{
                                             color: var(--color-primary-hover);
                                         }
+                                    }
+                                    .new::before{
+                                        position: absolute;
+                                        content : "New";
+                                        width: 30px;
+                                        height: 15px;
+                                        background-color: var(--color-primary-hover);
+                                        border-radius: 30px;
+                                        color: #fff;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 0.6rem;
+                                        font-family: var(--font-family-1);
+                                        top: -40%;
+                                        left: 100%;
+                                    }
+                                    .hot::before{
+                                            position: absolute;
+                                            content : "Hot";
+                                            width: 30px;
+                                            height: 15px;
+                                            background-color: #ff3e11;
+                                            border-radius: 30px;
+                                            color: #fff;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            font-size: 0.6rem;
+                                            font-family: var(--font-family-1);
+                                            top: -40%;
+                                            left: 100%;
                                     }
                                 }
                             }
@@ -108,7 +141,7 @@
                     }
 
                     &:hover {
-                        top: 100%;
+                        top: 101%;
                         opacity: 1;
                         visibility: visible;
                     }
@@ -131,6 +164,7 @@
                                     transform: scale(1.1);
                                 }
                             }
+                            
                             .header__middle__btn {
                                 width: 150px;
                                 position: absolute;
@@ -243,4 +277,5 @@
     .show_search {
         transform: translateX(0%);
     }
+    
 }

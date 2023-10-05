@@ -7,7 +7,9 @@ const Overlay = ({ visible, onClickOverlay }) => {
     const onClickOverlayHandler = () => {
         onClickOverlay();
         const searchHidden = document.querySelector('.header__search-hidden');
-        searchHidden.classList.toggle('show_search');
+        const loginHidden = document.querySelector('.hidden__login');
+        searchHidden.classList.remove('show_search');
+        loginHidden.classList.remove('show_search');
     };
     useEffect(() => {
         const ovelay = document.querySelector('.overlay');

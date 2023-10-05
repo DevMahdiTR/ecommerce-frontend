@@ -11,12 +11,22 @@ const Header = () => {
         const searchHidden = document.querySelector('.header__search-hidden');
         searchHidden.classList.toggle('show_search');
     }
-
+    const showHidenlLogin = () => {
+        const searchHidden = document.querySelector('.hidden__login');
+        searchHidden.classList.toggle('show_search');
+    }
+    const onClickLogin = () => {
+        showHidenlLogin();
+        store.dispatch(SearchActions.ToggleSearch(true));
+    }
     const onClickSearch = () => {
         showHidenSearch();
         store.dispatch(SearchActions.ToggleSearch(true));
+    } 
+    const onClickCloseLogin = () => {
+        showHidenlLogin();
+        store.dispatch(SearchActions.ToggleSearch(false));
     }
-
     const onClickCloseSearch = () => {
         showHidenSearch();
         store.dispatch(SearchActions.ToggleSearch(false));
@@ -30,80 +40,111 @@ const Header = () => {
                 <ul className='header__middle-ul'>
                     <li>
                         <a href="#">
-                            Home
+                            Shop
                         </a>
                         <div className="header__middle__content">
                             <div className='header__middle__content-container'>
                                 <div className='header__middle__title'>
-                                    <span>Informatique</span>
+                                    <span>SHOP PAGES</span>
                                 </div>
                                 <div className='line'></div>
                                 <div className='header__middle__list'>
                                     <ul>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a className = "new" href="">Grid</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a className='hot' href="">Masonry</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Packery</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Left sidebar</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a  className='new' href="">Right Sidebar</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a className='new' href="">Drawer sidebarNew</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a className='new' href="">Filter sidebarNew</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Filter area</a>
                                         </li>
-                                        <li>
-                                            <a href="">Pc Portable</a>
-                                        </li>
+                                       
                                     </ul>
                                 </div>
                             </div>
                             <div className='header__middle__content-container'>
                                 <div className='header__middle__title'>
-                                    <span>Informatique</span>
+                                    <span>FEATURES</span>
                                 </div>
                                 <div className='line'></div>
                                 <div className='header__middle__list'>
                                     <ul>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Pagination </a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Load more</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Infinit scrolling</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Has progress bar</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Collection list</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Sub Collection</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">List switcher</a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a href="">Banner Description</a>
+                                        </li>
+                                 
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='header__middle__content-container'>
+                                <div className='header__middle__title'>
+                                    <span>FEATURES</span>
+                                </div>
+                                <div className='line'></div>
+                                <div className='header__middle__list'>
+                                    <ul>
+                                        <li>
+                                            <a className='new' href="">Pagination </a>
                                         </li>
                                         <li>
-                                            <a href="">Pc Portable</a>
+                                            <a className='hot' href="">Load more</a>
                                         </li>
+                                        <li>
+                                            <a href="">Infinit scrolling</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Has progress bar</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Collection list</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Sub Collection</a>
+                                        </li>
+                                        <li>
+                                            <a className='new' href="">List switcher</a>
+                                        </li>
+                                        <li>
+                                            <a className='new' href="">Banner Description</a>
+                                        </li>
+                                 
                                     </ul>
                                 </div>
                             </div>
@@ -125,7 +166,112 @@ const Header = () => {
                             Shop
                         </a>
                         <div className="header__middle__content">
-
+                            <div className='header__middle__content-container'>
+                                <div className='header__middle__title'>
+                                    <span>SHOP PAGES</span>
+                                </div>
+                                <div className='line'></div>
+                                <div className='header__middle__list'>
+                                    <ul>
+                                        <li>
+                                            <a className = "new" href="">Grid</a>
+                                        </li>
+                                        <li>
+                                            <a className='hot' href="">Masonry</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Packery</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Left sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a  className='new' href="">Right Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a className='new' href="">Drawer sidebarNew</a>
+                                        </li>
+                                        <li>
+                                            <a className='new' href="">Filter sidebarNew</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Filter area</a>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='header__middle__content-container'>
+                                <div className='header__middle__title'>
+                                    <span>FEATURES</span>
+                                </div>
+                                <div className='line'></div>
+                                <div className='header__middle__list'>
+                                    <ul>
+                                        <li>
+                                            <a href="">Pagination </a>
+                                        </li>
+                                        <li>
+                                            <a href="">Load more</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Infinit scrolling</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Has progress bar</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Collection list</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Sub Collection</a>
+                                        </li>
+                                        <li>
+                                            <a href="">List switcher</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Banner Description</a>
+                                        </li>
+                                 
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='header__middle__content-container'>
+                                <div className='header__middle__title'>
+                                    <span>FEATURES</span>
+                                </div>
+                                <div className='line'></div>
+                                <div className='header__middle__list'>
+                                    <ul>
+                                        <li>
+                                            <a className='new' href="">Pagination </a>
+                                        </li>
+                                        <li>
+                                            <a className='hot' href="">Load more</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Infinit scrolling</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Has progress bar</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Collection list</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Sub Collection</a>
+                                        </li>
+                                        <li>
+                                            <a className='new' href="">List switcher</a>
+                                        </li>
+                                        <li>
+                                            <a className='new' href="">Banner Description</a>
+                                        </li>
+                                 
+                                    </ul>
+                                </div>
+                            </div>
+                            
                         </div>
                     </li>
                     <li>
@@ -148,7 +294,10 @@ const Header = () => {
                     />
                 </div>
                 <div className="header__left__authentication">
-                    <UserOutlined className='header__icons' />
+                    <UserOutlined 
+                        className='header__icons' 
+                        onClick={onClickLogin}    
+                    />
                 </div>
                 <div className="header__left__favorits">
                     <HeartOutlined className='header__icons' />
@@ -157,10 +306,7 @@ const Header = () => {
                     <ShoppingCartOutlined className='header__icons' />
                 </div>
             </div>
-            <div
-                className="header__search-hidden"
-
-            >
+            <div className ="header__search-hidden">
                 <div className="header__search-hidden__top">
                     <span>
                         SEARCH OUR SITE
@@ -176,6 +322,15 @@ const Header = () => {
                         <option value="audi">Audi</option>
                     </select>
                 </div>
+            </div>
+            <div className ="header__search-hidden hidden__login">
+                <div className="header__search-hidden__top">
+                    <span>
+                    LOGIN
+                    </span>
+                    <CloseOutlined onClick={onClickCloseLogin} className='header__icons close-icon' />
+                </div>
+                
             </div>
         </div>
     )
