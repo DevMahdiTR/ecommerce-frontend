@@ -2,8 +2,8 @@ import './header.scss';
 import { logo, men, women } from '../../assets/index';
 import { HeartOutlined, SearchOutlined, ShoppingCartOutlined, UserOutlined, CloseOutlined } from '@ant-design/icons';
 import { SearchActions } from '../../redux/index'
-import { connect } from 'react-redux';
 import store from '../../redux/store';
+import { Form, Input } from 'antd';
 
 const Header = () => {
 
@@ -22,7 +22,7 @@ const Header = () => {
     const onClickSearch = () => {
         showHidenSearch();
         store.dispatch(SearchActions.ToggleSearch(true));
-    } 
+    }
     const onClickCloseLogin = () => {
         showHidenlLogin();
         store.dispatch(SearchActions.ToggleSearch(false));
@@ -31,6 +31,17 @@ const Header = () => {
         showHidenSearch();
         store.dispatch(SearchActions.ToggleSearch(false));
     }
+    const toggelAriaHidden = (className) => {
+        const elements = document.querySelectorAll('.'+className);
+        elements.forEach(element => {
+            element.classList.toggle('aria-hidden');
+        });
+    }
+    const onChangeLoginOrSigneup = () => {
+        toggelAriaHidden(".login-element");
+        toggelAriaHidden('.signup-element');
+    }
+   
     return (
         <div className='header'>
             <div className='header__left'>
@@ -51,7 +62,7 @@ const Header = () => {
                                 <div className='header__middle__list'>
                                     <ul>
                                         <li>
-                                            <a className = "new" href="">Grid</a>
+                                            <a className="new" href="">Grid</a>
                                         </li>
                                         <li>
                                             <a className='hot' href="">Masonry</a>
@@ -63,7 +74,7 @@ const Header = () => {
                                             <a href="">Left sidebar</a>
                                         </li>
                                         <li>
-                                            <a  className='new' href="">Right Sidebar</a>
+                                            <a className='new' href="">Right Sidebar</a>
                                         </li>
                                         <li>
                                             <a className='new' href="">Drawer sidebarNew</a>
@@ -74,7 +85,7 @@ const Header = () => {
                                         <li>
                                             <a href="">Filter area</a>
                                         </li>
-                                       
+
                                     </ul>
                                 </div>
                             </div>
@@ -109,7 +120,7 @@ const Header = () => {
                                         <li>
                                             <a href="">Banner Description</a>
                                         </li>
-                                 
+
                                     </ul>
                                 </div>
                             </div>
@@ -144,7 +155,7 @@ const Header = () => {
                                         <li>
                                             <a className='new' href="">Banner Description</a>
                                         </li>
-                                 
+
                                     </ul>
                                 </div>
                             </div>
@@ -174,7 +185,7 @@ const Header = () => {
                                 <div className='header__middle__list'>
                                     <ul>
                                         <li>
-                                            <a className = "new" href="">Grid</a>
+                                            <a className="new" href="">Grid</a>
                                         </li>
                                         <li>
                                             <a className='hot' href="">Masonry</a>
@@ -186,7 +197,7 @@ const Header = () => {
                                             <a href="">Left sidebar</a>
                                         </li>
                                         <li>
-                                            <a  className='new' href="">Right Sidebar</a>
+                                            <a className='new' href="">Right Sidebar</a>
                                         </li>
                                         <li>
                                             <a className='new' href="">Drawer sidebarNew</a>
@@ -197,7 +208,7 @@ const Header = () => {
                                         <li>
                                             <a href="">Filter area</a>
                                         </li>
-                                       
+
                                     </ul>
                                 </div>
                             </div>
@@ -232,7 +243,7 @@ const Header = () => {
                                         <li>
                                             <a href="">Banner Description</a>
                                         </li>
-                                 
+
                                     </ul>
                                 </div>
                             </div>
@@ -267,11 +278,11 @@ const Header = () => {
                                         <li>
                                             <a className='new' href="">Banner Description</a>
                                         </li>
-                                 
+
                                     </ul>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </li>
                     <li>
@@ -294,9 +305,9 @@ const Header = () => {
                     />
                 </div>
                 <div className="header__left__authentication">
-                    <UserOutlined 
-                        className='header__icons' 
-                        onClick={onClickLogin}    
+                    <UserOutlined
+                        className='header__icons'
+                        onClick={onClickLogin}
                     />
                 </div>
                 <div className="header__left__favorits">
@@ -306,7 +317,7 @@ const Header = () => {
                     <ShoppingCartOutlined className='header__icons' />
                 </div>
             </div>
-            <div className ="header__search-hidden">
+            <div className="header__search-hidden">
                 <div className="header__search-hidden__top">
                     <span>
                         SEARCH OUR SITE
@@ -323,14 +334,57 @@ const Header = () => {
                     </select>
                 </div>
             </div>
-            <div className ="header__search-hidden hidden__login">
+            <div className="header__search-hidden hidden__login">
                 <div className="header__search-hidden__top">
-                    <span>
-                    LOGIN
+                    <span className='login-element'>
+                        LOGIN
+                    </span>
+                    <span className='signup-element aria-hidden'>
+                        REGISTER
                     </span>
                     <CloseOutlined onClick={onClickCloseLogin} className='header__icons close-icon' />
                 </div>
-                
+                <div className='hidden__middle'>
+                    <div className="hidden-form login-element">
+                        <Form onFinish={null}>
+                            <Form.Item name="Email" rules={[{ required: true, message: 'Please input your email!' }]}>
+                                <Input className='field' placeholder='Email' />
+                            </Form.Item>
+                            <Form.Item name="Password" rules={[{ required: true, message: 'Please input your password!' }]}>
+                                <Input className='field' placeholder='Password' />
+                            </Form.Item>
+                        </Form>
+
+                    </div>
+                    <div className="hidden-form signup-element aria-hidden">
+                        <Form onFinish={null}>
+                            <Form.Item name="FirstName" rules={[{ required: true, message: 'Please input your first name!' }]}>
+                                <Input className='field' placeholder='First Name' />
+                            </Form.Item>
+                            <Form.Item name="LastName" rules={[{ required: true, message: 'Please input your last name!' }]}>
+                                <Input className='field' placeholder='Last Name' />
+                            </Form.Item>
+                            <Form.Item name="Email" rules={[{ required: true, message: 'Please input your email!' }]}>
+                                <Input className='field' placeholder='Email' />
+                            </Form.Item>
+                            <Form.Item name="Password" rules={[{ required: true, message: 'Please input your password!' }]}>
+                                <Input className='field' placeholder='Password' />
+                            </Form.Item>
+                        </Form>
+                    </div>
+                    <div className="hidden-login__link login-element">
+                        <a href="#">Forget your password?</a>
+                    </div>
+                    <div className="hidde-login__btn ">
+                        <button className='login-element'>Login</button>
+                        <button className='signup-element aria-hidden'>Register</button>
+                    </div>
+                    <div className="hidden-login__link ">
+                        <a className="login-element" onClick= {onChangeLoginOrSigneup} href="#">New customer? Create your account</a>
+                        <a  className = "signup-element aria-hidden" onClick={onChangeLoginOrSigneup} href="#">Already have an account? Login here</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     )
