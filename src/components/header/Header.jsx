@@ -1,6 +1,6 @@
 import './header.scss';
 import { logo, men, women } from '../../assets/index';
-import { HeartOutlined, SearchOutlined, ShoppingCartOutlined, UserOutlined, CloseOutlined } from '@ant-design/icons';
+import { HeartOutlined, SearchOutlined, ShoppingCartOutlined, UserOutlined, CloseOutlined , MenuOutlined} from '@ant-design/icons';
 import { SearchActions } from '../../redux/index'
 import store from '../../redux/store';
 import { Form, Input } from 'antd';
@@ -31,19 +31,58 @@ const Header = () => {
         showHidenSearch();
         store.dispatch(SearchActions.ToggleSearch(false));
     }
-    const toggelAriaHidden = (className) => {
-        const elements = document.querySelectorAll('.'+className);
-        elements.forEach(element => {
-            element.classList.toggle('aria-hidden');
+    const revealElementByClassName = (className) => {
+        const element = document.querySelectorAll(className);
+        element.forEach((element) => {
+            if(element.classList.contains('aria-hidden')){
+                element.classList.remove('aria-hidden');
+            }
         });
     }
-    const onChangeLoginOrSigneup = () => {
-        toggelAriaHidden(".login-element");
-        toggelAriaHidden('.signup-element');
+    const hideElementByClassName = (className) => {
+        const element = document.querySelectorAll(className);
+        element.forEach((element) => {
+            if(!element.classList.contains('aria-hidden')){
+                element.classList.add('aria-hidden');
+            }
+        });
     }
-   
+    const switchAuthState = (state) => {
+        const signup = document.querySelectorAll(".signup-element");
+        const login = document.querySelectorAll(".login-element");
+        const forget = document.querySelectorAll(".forget-element");
+        
+        revealElementByClassName(".signup-element");
+        revealElementByClassName(".login-element");
+        revealElementByClassName(".forget-element");
+
+        switch(state){
+            case "singup":
+                hideElementByClassName(".login-element");
+                hideElementByClassName(".forget-element");
+                break;
+            case "login":
+                hideElementByClassName(".signup-element");
+                hideElementByClassName(".forget-element");
+                break;
+            case "forget":
+                hideElementByClassName(".login-element");
+                hideElementByClassName(".signup-element");
+                break;
+            default:
+                break;
+        }
+    }
+
     return (
         <div className='header'>
+            <div className="header__menu">
+                <div className='menu-icon'>
+                    <span className='line '></span>
+                    <span className='line line-middle'></span>
+                    <span className='line '></span>
+                </div>
+            </div>
             <div className='header__left'>
                 <img src={logo} alt='logo' />
             </div>
@@ -298,23 +337,25 @@ const Header = () => {
                 </ul>
             </div>
             <div className='header__left'>
-                <div className="header__left__search">
+                <div className="header__left__search header-icon search">
                     <SearchOutlined
                         className='header__icons search-icon'
                         onClick={onClickSearch}
                     />
                 </div>
-                <div className="header__left__authentication">
+                <div className="header__left__authentication header-icon authentication">
                     <UserOutlined
                         className='header__icons'
                         onClick={onClickLogin}
                     />
                 </div>
-                <div className="header__left__favorits">
+                <div className="header__left__favorits header-icon favorits">
                     <HeartOutlined className='header__icons' />
+                    <span className='header__left-count'><span>0</span></span>
                 </div>
-                <div className="header__left__cart">
+                <div className="header__left__cart header-icon cart">
                     <ShoppingCartOutlined className='header__icons' />
+                    <span className='header__left-count'><span>0</span></span>
                 </div>
             </div>
             <div className="header__search-hidden">
@@ -342,9 +383,17 @@ const Header = () => {
                     <span className='signup-element aria-hidden'>
                         REGISTER
                     </span>
+                    <span className='forget-element aria-hidden'>
+                        RESET YOUR PASSWORD
+                    </span>
                     <CloseOutlined onClick={onClickCloseLogin} className='header__icons close-icon' />
                 </div>
                 <div className='hidden__middle'>
+                    <div className='forget-element aria-hidden '>
+                        <p>
+                            Lost your password? Please enter your email address. You will receive a link to create a new password via email.
+                        </p>
+                    </div>
                     <div className="hidden-form login-element">
                         <Form onFinish={null}>
                             <Form.Item name="Email" rules={[{ required: true, message: 'Please input your email!' }]}>
@@ -356,6 +405,7 @@ const Header = () => {
                         </Form>
 
                     </div>
+
                     <div className="hidden-form signup-element aria-hidden">
                         <Form onFinish={null}>
                             <Form.Item name="FirstName" rules={[{ required: true, message: 'Please input your first name!' }]}>
@@ -372,16 +422,25 @@ const Header = () => {
                             </Form.Item>
                         </Form>
                     </div>
+                    <div className="hidden-form forget-element aria-hidden">
+                        <Form onFinish={null}>
+                            <Form.Item name="Email" rules={[{ required: true, message: 'Please input your email!' }]}>
+                                <Input className='field' placeholder='Email' />
+                            </Form.Item>
+                        </Form>
+                    </div>
                     <div className="hidden-login__link login-element">
-                        <a href="#">Forget your password?</a>
+                        <a onClick = {() => switchAuthState("forget")} href="#">Forget your password?</a>
                     </div>
                     <div className="hidde-login__btn ">
                         <button className='login-element'>Login</button>
                         <button className='signup-element aria-hidden'>Register</button>
+                        <button className='forget-element aria-hidden'>Reset Password</button>
                     </div>
                     <div className="hidden-login__link ">
-                        <a className="login-element" onClick= {onChangeLoginOrSigneup} href="#">New customer? Create your account</a>
-                        <a  className = "signup-element aria-hidden" onClick={onChangeLoginOrSigneup} href="#">Already have an account? Login here</a>
+                        <a className="login-element" onClick={() => switchAuthState("singup")} href="#">New customer? Create your account</a>
+                        <a className="signup-element aria-hidden" onClick={() => switchAuthState("login")} href="#">Already have an account? Login here</a>
+                        <a className='forget-element aria-hidden' href='#' onClick={()=> switchAuthState("login")}>Cancel</a>
                     </div>
                 </div>
 

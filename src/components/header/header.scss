@@ -1,10 +1,36 @@
 .header {
     position: relative;
+    height: 50px;
     padding: 0 0.5em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
+    .header__menu {
+        display: none;
+        .menu-icon {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            gap: 0.3em;
+            cursor: pointer;
+            &:hover {
+                .line {
+                    background-color: var(--color-primary-hover);
+                    transform: scale(1.1);
+                }
+            }
+            .line {
+                width: 30px;
+                height: 2px;
+                background-color: #000;
+                transition: all var(--duration-short) ease-in-out;
+            }
+            .line-middle {
+                width: 20px;
+            }
+        }
+    }
     .header__left {
         display: flex;
         flex-direction: row;
@@ -63,21 +89,20 @@
                     opacity: 0;
                     padding: 1.5em 2em 1em 2em;
                     gap: 1.5em;
-                    transition: all var(--duration-short) ease-in-out;
+                    transition: all var(--duration-short) cubic-bezier(.645,.045,.355,1);
                     .header__middle__content-container {
                         display: flex;
                         flex-direction: column;
                         width: 150px;
-                        .header__middle__title{
-                            span{
+                        .header__middle__title {
+                            span {
                                 font-size: 0.9rem;
                                 font-weight: 500;
                                 font-family: var(--font-family-1);
                                 color: var(--title-cl-second);
                             }
-                            
                         }
-                        .line{
+                        .line {
                             width: 100%;
                             height: 1px;
                             background-color: #ccc;
@@ -85,27 +110,27 @@
                         }
                         .header__middle__list {
                             align-self: flex-start;
-                            ul{
+                            ul {
                                 list-style-type: none;
                                 padding: 0;
                                 display: flex;
                                 flex-direction: column;
-                                
-                                li{
+
+                                li {
                                     padding: 6.5px 0;
                                     position: relative;
-                                    a{
+                                    a {
                                         text-decoration: none;
-                                        color : var(--text-color);
+                                        color: var(--text-color);
                                         font-size: 0.85rem;
                                         align-self: flex-start;
-                                        &:hover{
+                                        &:hover {
                                             color: var(--color-primary-hover);
                                         }
                                     }
-                                    .new::before{
+                                    .new::before {
                                         position: absolute;
-                                        content : "New";
+                                        content: "New";
                                         width: 30px;
                                         height: 15px;
                                         background-color: var(--color-primary-hover);
@@ -119,21 +144,21 @@
                                         top: -40%;
                                         left: 100%;
                                     }
-                                    .hot::before{
-                                            position: absolute;
-                                            content : "Hot";
-                                            width: 30px;
-                                            height: 15px;
-                                            background-color: #ff3e11;
-                                            border-radius: 30px;
-                                            color: #fff;
-                                            display: flex;
-                                            align-items: center;
-                                            justify-content: center;
-                                            font-size: 0.6rem;
-                                            font-family: var(--font-family-1);
-                                            top: -40%;
-                                            left: 100%;
+                                    .hot::before {
+                                        position: absolute;
+                                        content: "Hot";
+                                        width: 30px;
+                                        height: 15px;
+                                        background-color: #ff3e11;
+                                        border-radius: 30px;
+                                        color: #fff;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 0.6rem;
+                                        font-family: var(--font-family-1);
+                                        top: -40%;
+                                        left: 100%;
                                     }
                                 }
                             }
@@ -147,7 +172,7 @@
                     }
                     .header__middle__special {
                         display: flex;
-                        gap : 1.5em;
+                        gap: 1.5em;
                         .header__middle__speicial {
                             display: flex;
                             flex-direction: row;
@@ -164,7 +189,7 @@
                                     transform: scale(1.1);
                                 }
                             }
-                            
+
                             .header__middle__btn {
                                 width: 150px;
                                 position: absolute;
@@ -203,6 +228,24 @@
         align-items: center;
         justify-content: center;
         gap: 1em;
+        .header-icon {
+            position: relative;
+            .header__left-count {
+                width: 15px;
+                height: 15px;
+                background-color: #000;
+                border-radius: 50%;
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.7rem;
+                font-family: var(--font-family-1);
+                color: #fff;
+            }
+        }
 
         .header__icons {
             font-size: 1.3em;
@@ -215,39 +258,44 @@
             }
         }
     }
-    .hidden__login{
-
-        
-        .hidden__middle{
+    .hidden__login {
+        .hidden__middle {
             display: flex;
             flex-direction: column;
             padding: 1em;
-
-            .hidden-form{
-                .field{
+            .forget-element {
+                p {
+                    font-family: var(--font-family-1);
+                    font-size: 0.85rem;
+                    color: var(--text-color);
+                    margin: 1em 0;
+                }
+            }
+            .hidden-form {
+                .field {
                     height: 45px;
                     font-family: var(--font-family-1);
                     font-size: 0.95rem;
                     border-color: #b8b8b8;
-                    &::placeholder{
-                        color:#b8b8b8;
-                    }   
+                    &::placeholder {
+                        color: #b8b8b8;
+                    }
                 }
             }
-            .hidden-login__link{
+            .hidden-login__link {
                 margin: 1em 0em;
-                a{
+                a {
                     font-family: var(--font-family-1);
                     font-size: 0.9rem;
                     color: var(--link-color);
                     transition: all var(--duration-short) ease-in-out;
-                    &:hover{
+                    &:hover {
                         color: var(--color-primary-hover);
                     }
                 }
             }
-            .hidde-login__btn{
-                button{
+            .hidde-login__btn {
+                button {
                     width: 100%;
                     height: 45px;
                     border-radius: 30px;
@@ -259,7 +307,7 @@
                     font-weight: 600;
                     cursor: pointer;
                     transition: all var(--duration-short) ease-in-out;
-                    &:hover{
+                    &:hover {
                         background-color: var(--accent-color-darken);
                     }
                 }
@@ -277,7 +325,7 @@
         transform: translateX(100%);
         display: flex;
         flex-direction: column;
-        transition: all var(--duration-long) ease-in-out;
+        transition: transform .5s cubic-bezier(.645, .045, .355, 1),visibility .5s cubic-bezier(.645, .045, .355, 1);
 
         .header__search-hidden__top {
             display: flex;
@@ -328,19 +376,35 @@
     .show_search {
         transform: translateX(0%);
     }
-    
 }
-.signup-element , .login-element{
+.signup-element,
+.login-element,
+.forget-element {
     animation: 1s t4s-ani-fadeIn;
 }
-.aria-hidden{
+.aria-hidden {
     display: none;
 }
 @keyframes t4s-ani-fadeIn {
-    0%{
+    0% {
         opacity: 0;
     }
-    100%{
+    100% {
         opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1120px) {
+    .header__middle {
+        display: none !important;
+    }
+    .header__menu {
+        display: flex !important;
+    }
+}
+@media only screen and (max-width: 760px) {
+    .authentication,
+    .favorits {
+        display: none;
     }
 }
