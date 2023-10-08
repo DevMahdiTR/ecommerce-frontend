@@ -445,6 +445,16 @@ const Header = () => {
                 </div>
 
             </div>
+            <div className="header__hidden_left">
+                <div className="menu">
+                    <span>
+                        MENU
+                    </span>
+                    <span>
+                        CATEGORIES
+                    </span>
+                </div>
+            </div>
         </div>
     )
 }
