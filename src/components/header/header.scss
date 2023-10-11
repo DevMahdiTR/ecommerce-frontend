@@ -372,9 +372,27 @@
                 background-size: 15px 16px;
             }
         }
+       
     }
     .show_search {
         transform: translateX(0%);
+    }
+
+    .header__hidden_left{
+        align-items: center;
+        position: absolute;
+        position: absolute;
+        z-index: 30;
+        width: 350px;
+        height: 100vh;
+        background-color: #fff;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        display: flex;
+        flex-direction: column;
+        transition: transform .5s cubic-bezier(.645, .045, .355, 1),visibility .5s cubic-bezier(.645, .045, .355, 1);
+
     }
 }
 .signup-element,
