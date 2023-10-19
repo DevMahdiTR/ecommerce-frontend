@@ -8,8 +8,10 @@ const Overlay = ({ visible, onClickOverlay }) => {
         onClickOverlay();
         const searchHidden = document.querySelector('.header__search-hidden');
         const loginHidden = document.querySelector('.hidden__login');
+        const leftHeader = document.querySelector('.header__hidden_left');
         searchHidden.classList.remove('show_search');
         loginHidden.classList.remove('show_search');
+        leftHeader.classList.remove('show_search');
     };
     useEffect(() => {
         const ovelay = document.querySelector('.overlay');

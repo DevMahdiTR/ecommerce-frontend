@@ -73,10 +73,34 @@ const Header = () => {
                 break;
         }
     }
+    const onClickMenu = () => {
+        const menu = document.querySelector('.header__hidden_left');
+        menu.classList.toggle('show_search');
+        store.dispatch(SearchActions.ToggleSearch(true));
+    }
+    const onClickCategories = (state) => {
+        const menu = document.querySelector('.header__hidden_menu');
+        const categories = document.querySelector('.header__hidden_categories');
+        const indicator = document.querySelector('.selection-indicator');
+        if(state === "menu")
+        {
+            if(menu.classList.contains('selected-menu')) return;
+            menu.classList.add('selected-menu');
+            categories.classList.remove('selected-menu');
+            indicator.classList.remove("selection-indicator-move-100");
+        }
+        else if(state === "categories")
+        {
+            if(categories.classList.contains('selected-menu')) return;
+            menu.classList.remove('selected-menu');
+            categories.classList.add('selected-menu');
+            indicator.classList.add("selection-indicator-move-100");
+        }
+    }
 
     return (
         <div className='header'>
-            <div className="header__menu">
+            <div className="header__menu" onClick={onClickMenu}>
                 <div className='menu-icon'>
                     <span className='line '></span>
                     <span className='line line-middle'></span>
@@ -447,13 +471,17 @@ const Header = () => {
             </div>
             <div className="header__hidden_left">
                 <div className="menu">
-                    <span>
+                    <span className='header__hidden_menu selected-menu' onClick={() => onClickCategories("menu")}>
                         MENU
                     </span>
-                    <span>
+                    <span className='header__hidden_categories' onClick={() => onClickCategories("categories")}>
                         CATEGORIES
                     </span>
+                    <div className='selection-indicator'>
+
+                    </div>
                 </div>
+                
             </div>
         </div>
     )
