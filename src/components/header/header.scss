@@ -379,9 +379,7 @@
     }
 
     .header__hidden_left{
-        overflow: hidden;
         align-items: center;
-        position: absolute;
         position: absolute;
         z-index: 30;
         width: 350px;
@@ -394,6 +392,7 @@
         flex-direction: column;
         transition: transform .5s cubic-bezier(.645, .045, .355, 1),visibility .5s cubic-bezier(.645, .045, .355, 1);
         .menu{
+            overflow: hidden;
             width: 100%;
             display: flex;
             flex-direction: row;
@@ -435,6 +434,19 @@
                 background-color: rgba(135, 135, 135, 0.323);
             }
         }
+        .header__hidden_left__close{
+            position: absolute;
+            font-size: 1.4rem;
+            background-color: #222222;
+            padding: 0.5em 0.7em;
+            color: #fff;
+            transition: all .5s cubic-bezier(.645, .045, .355, 1),visibility .5s cubic-bezier(.645, .045, .355, 1);
+            cursor: pointer;
+        }
+        .move-close-btn{
+            transform: translateX(202px) !important;
+        }
+        
     }
 }
 .signup-element,
@@ -460,6 +472,8 @@
     }
     .header__menu {
         display: flex !important;
+
+        
     }
 }
 @media only screen and (max-width: 760px) {

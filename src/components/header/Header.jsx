@@ -75,8 +75,11 @@ const Header = () => {
     }
     const onClickMenu = () => {
         const menu = document.querySelector('.header__hidden_left');
+        const closeBtn = document.querySelector('.header__hidden_left__close');
         menu.classList.toggle('show_search');
         store.dispatch(SearchActions.ToggleSearch(true));
+        if(closeBtn.classList.contains('move-close-btn')) return;
+        closeBtn.classList.add('move-close-btn');
     }
     const onClickCategories = (state) => {
         const menu = document.querySelector('.header__hidden_menu');
@@ -96,6 +99,13 @@ const Header = () => {
             categories.classList.add('selected-menu');
             indicator.classList.add("selection-indicator-move-100");
         }
+    }
+    const onCloseLeftMenue = () => {
+        const menu = document.querySelector('.header__hidden_left');
+        const closeBtn = document.querySelector('.header__hidden_left__close');
+        menu.classList.remove('show_search');
+        closeBtn.classList.remove('move-close-btn');
+        store.dispatch(SearchActions.ToggleSearch(false));
     }
 
     return (
@@ -480,6 +490,9 @@ const Header = () => {
                     <div className='selection-indicator'>
 
                     </div>
+                </div>
+                <div className='header__hidden_left__close'>
+                    <CloseOutlined onClick={onCloseLeftMenue}/>
                 </div>
                 
             </div>
