@@ -1,14 +1,23 @@
 import './slidetemp1.scss';
-import {img_slider1} from '../../../assets/index';
-const SlideTemp1 = () => {
+const SlideTemp1 = ({position , animation , image , smallTitle , bigTitle}) => {
+  const style = position === "right" ? { alignItems: 'flex-end', right: '18%' } : { alignItems: 'flex-start', left: '15%' };
+  const animations = ["animation-1" , "animation-2" , "animation-3"];
+  const animationInStore = () => {
+    for(let i = 0 ; i < animations.length ; i++){
+      if(animation === animations[i]){
+        return animations[i]
+      }
+    }
+    return animations[0];
+  }
   return (
     <div className='slide-temp'>
         <div className="slide-temp__img">
-            <img src={img_slider1} alt="" />
+            <img src={image} alt="" />
         </div>
-        <div className="slide-temp__content template-1">
-            <p className='first'>SUMMBER 2023</p>
-            <p className='second'>New Arriavla Collection</p>
+        <div className={`slide-temp__content ${animationInStore()}`} style={style}>
+            <p className='first'>{smallTitle}</p>
+            <p className='second'>{bigTitle}</p>
             <a href="" className='slide-btn'>
                 <span>Explore Now</span>
                 </a>

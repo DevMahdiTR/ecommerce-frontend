@@ -21,11 +21,9 @@
         position: absolute;
         display: flex;
         flex-direction: column;
-        align-items:flex-start;
         justify-content: center;
         font-family: "Poppins", sans-serif;
-        text-align: center;
-        left: 20%;
+       
         
         .first{
             margin: 0;
@@ -87,33 +85,80 @@
     }
 }
 
-@keyframes  fade-in{
+@keyframes  bottomToTop{
     from{
         opacity: 0;
-        transform: translateY(60px);
+        transform: translateY(70px);
     }
     to{
         opacity: 1;
         transform: translateY(0px);
     }
 }
+@keyframes  TopToBottom{
+    from{
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes rightToLeft {
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    
+    }
+}
 .slide-active{
     opacity: 1 !important;
     transition: opacity 0.5s ease-in-out !important;
 }
-
 .animate-in {
     .slide-temp{
-        .template-1{
+        .animation-1{
             .first{
-                animation: fade-in 0.8s ease-in-out  forwards !important;
+                animation: bottomToTop 0.8s ease-in-out  forwards !important;
             }
             .second{ 
-                animation: fade-in 0.8s ease-in-out 0.4s forwards;
+                animation: bottomToTop 0.8s ease-in-out 0.4s forwards;
             }
             
             .slide-btn{  
-                animation: fade-in 0.8s ease-in-out 0.6s forwards;
+                animation: bottomToTop 0.8s ease-in-out 0.6s forwards;
+                
+            }    
+        }
+        .animation-2{
+            .first{
+                animation: bottomToTop 0.8s ease-in-out  forwards !important;
+            }
+            .second{ 
+                animation: bottomToTop 0.8s ease-in-out 0.4s forwards;
+            }
+            
+            .slide-btn{  
+                animation: rightToLeft 0.8s ease-in-out 0.8s forwards;
+                
+            }    
+        }
+        .animation-3{
+            .first{
+                animation: TopToBottom 0.8s ease-in-out  forwards;
+            }
+            .second{ 
+                animation: TopToBottom 0.8s ease-in-out 0.4s forwards;
+            }
+            
+            .slide-btn{  
+                animation: TopToBottom 0.8s ease-in-out 0.6s forwards;
                 
             }    
         }
