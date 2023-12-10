@@ -4,13 +4,11 @@
     position: relative;
     .carouselle__currnet__slide{
         height: 100%;
-        width: 100%;
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: center;
     }
-
+    
     .carouselle__navigation{
         position: absolute;
         display: flex;
@@ -39,6 +37,7 @@
 }
 .slide {
     opacity: 0;
+
     transition: opacity 0.5s ease-in-out;
   
     &.active {

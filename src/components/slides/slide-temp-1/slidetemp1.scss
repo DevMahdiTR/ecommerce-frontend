@@ -25,6 +25,7 @@
         font-family: "Poppins", sans-serif;
        
         
+        
         .first{
             margin: 0;
             font-size: 1.2rem;
@@ -52,7 +53,7 @@
             padding:0.5em 2em;
             opacity: 0;
             cursor: pointer;
-
+            z-index: 5;
             display: inline-block;
             span
             {
@@ -125,7 +126,7 @@
     .slide-temp{
         .animation-1{
             .first{
-                animation: bottomToTop 0.8s ease-in-out  forwards !important;
+                animation: bottomToTop 0.8s ease-in-out  forwards ;
             }
             .second{ 
                 animation: bottomToTop 0.8s ease-in-out 0.4s forwards;
@@ -138,7 +139,7 @@
         }
         .animation-2{
             .first{
-                animation: bottomToTop 0.8s ease-in-out  forwards !important;
+                animation: bottomToTop 0.8s ease-in-out  forwards ;
             }
             .second{ 
                 animation: bottomToTop 0.8s ease-in-out 0.4s forwards;

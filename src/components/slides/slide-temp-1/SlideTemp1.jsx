@@ -4,7 +4,7 @@ const SlideTemp1 = ({position , animation , image , smallTitle , bigTitle}) => {
   const animations = ["animation-1" , "animation-2" , "animation-3"];
   const animationInStore = () => {
     for(let i = 0 ; i < animations.length ; i++){
-      if(animation === animations[i]){
+      if(animation === animations[i]){ 
         return animations[i]
       }
     }

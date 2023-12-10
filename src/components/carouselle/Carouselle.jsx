@@ -23,6 +23,7 @@ const Carouselle = ({ slides }) => {
       <div
         key={index}
         className={`slide ${index === currentPage ? 'active animate-in' : ''}`}
+        style={{zIndex: index === currentPage ? 1 : 0}}
       >
         {slide}
       </div>
