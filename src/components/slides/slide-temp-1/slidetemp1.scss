@@ -1,4 +1,4 @@
-.slide-temp-1{
+.slide-temp{
     background-color: #fff;
     display: flex;
     height: 100%;
@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    .slide-temp-1__img{
+    .slide-temp__img{
         height: 100%;
         width: 100%;
         img{
@@ -17,7 +17,7 @@
             object-position: center center;
         }
     }
-    .slide-temp-1__content{
+    .slide-temp__content{
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -103,8 +103,8 @@
 }
 
 .animate-in {
-    .slide-temp-1{
-        .slide-temp-1__content{
+    .slide-temp{
+        .template-1{
             .first{
                 animation: fade-in 0.8s ease-in-out  forwards !important;
             }
