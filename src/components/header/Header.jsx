@@ -1,11 +1,15 @@
 import './header.scss';
 import { logo, men, women } from '../../assets/index';
-import { HeartOutlined, SearchOutlined, ShoppingCartOutlined, UserOutlined, CloseOutlined , MenuOutlined} from '@ant-design/icons';
+import { HeartOutlined, SearchOutlined, ShoppingCartOutlined, UserOutlined, CloseOutlined, MenuOutlined } from '@ant-design/icons';
 import { SearchActions } from '../../redux/index'
 import store from '../../redux/store';
 import { Form, Input } from 'antd';
+import axios from 'axios';
+
+
 
 const Header = () => {
+
 
     const showHidenSearch = () => {
         const searchHidden = document.querySelector('.header__search-hidden');
@@ -20,6 +24,8 @@ const Header = () => {
         store.dispatch(SearchActions.ToggleSearch(true));
     }
     const onClickSearch = () => {
+
+
         showHidenSearch();
         store.dispatch(SearchActions.ToggleSearch(true));
     }
@@ -34,7 +40,7 @@ const Header = () => {
     const revealElementByClassName = (className) => {
         const element = document.querySelectorAll(className);
         element.forEach((element) => {
-            if(element.classList.contains('aria-hidden')){
+            if (element.classList.contains('aria-hidden')) {
                 element.classList.remove('aria-hidden');
             }
         });
@@ -42,7 +48,7 @@ const Header = () => {
     const hideElementByClassName = (className) => {
         const element = document.querySelectorAll(className);
         element.forEach((element) => {
-            if(!element.classList.contains('aria-hidden')){
+            if (!element.classList.contains('aria-hidden')) {
                 element.classList.add('aria-hidden');
             }
         });
@@ -51,12 +57,12 @@ const Header = () => {
         const signup = document.querySelectorAll(".signup-element");
         const login = document.querySelectorAll(".login-element");
         const forget = document.querySelectorAll(".forget-element");
-        
+
         revealElementByClassName(".signup-element");
         revealElementByClassName(".login-element");
         revealElementByClassName(".forget-element");
 
-        switch(state){
+        switch (state) {
             case "singup":
                 hideElementByClassName(".login-element");
                 hideElementByClassName(".forget-element");
@@ -78,23 +84,21 @@ const Header = () => {
         const closeBtn = document.querySelector('.header__hidden_left__close');
         menu.classList.toggle('show_search');
         store.dispatch(SearchActions.ToggleSearch(true));
-        if(closeBtn.classList.contains('move-close-btn')) return;
+        if (closeBtn.classList.contains('move-close-btn')) return;
         closeBtn.classList.add('move-close-btn');
     }
     const onClickCategories = (state) => {
         const menu = document.querySelector('.header__hidden_menu');
         const categories = document.querySelector('.header__hidden_categories');
         const indicator = document.querySelector('.selection-indicator');
-        if(state === "menu")
-        {
-            if(menu.classList.contains('selected-menu')) return;
+        if (state === "menu") {
+            if (menu.classList.contains('selected-menu')) return;
             menu.classList.add('selected-menu');
             categories.classList.remove('selected-menu');
             indicator.classList.remove("selection-indicator-move-100");
         }
-        else if(state === "categories")
-        {
-            if(categories.classList.contains('selected-menu')) return;
+        else if (state === "categories") {
+            if (categories.classList.contains('selected-menu')) return;
             menu.classList.remove('selected-menu');
             categories.classList.add('selected-menu');
             indicator.classList.add("selection-indicator-move-100");
@@ -464,7 +468,7 @@ const Header = () => {
                         </Form>
                     </div>
                     <div className="hidden-login__link login-element">
-                        <a onClick = {() => switchAuthState("forget")} href="#">Forget your password?</a>
+                        <a onClick={() => switchAuthState("forget")} href="#">Forget your password?</a>
                     </div>
                     <div className="hidde-login__btn ">
                         <button className='login-element'>Login</button>
@@ -474,7 +478,7 @@ const Header = () => {
                     <div className="hidden-login__link ">
                         <a className="login-element" onClick={() => switchAuthState("singup")} href="#">New customer? Create your account</a>
                         <a className="signup-element aria-hidden" onClick={() => switchAuthState("login")} href="#">Already have an account? Login here</a>
-                        <a className='forget-element aria-hidden' href='#' onClick={()=> switchAuthState("login")}>Cancel</a>
+                        <a className='forget-element aria-hidden' href='#' onClick={() => switchAuthState("login")}>Cancel</a>
                     </div>
                 </div>
 
@@ -492,9 +496,9 @@ const Header = () => {
                     </div>
                 </div>
                 <div className='header__hidden_left__close'>
-                    <CloseOutlined onClick={onCloseLeftMenue}/>
+                    <CloseOutlined onClick={onCloseLeftMenue} />
                 </div>
-                
+
             </div>
         </div>
     )

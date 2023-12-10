@@ -24,7 +24,7 @@ const Overlay = ({ visible, onClickOverlay }) => {
             ovelay.classList.remove('overlay-not-visible');
         }
     }, [visible]);
-    return (
+    return ( 
 
         <div className="overlay" onClick={onClickOverlayHandler}>
 

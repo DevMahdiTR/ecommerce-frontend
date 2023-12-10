@@ -76,6 +76,7 @@
                     }
                 }
                 .header__middle__content {
+                    z-index: 100;
                     position: absolute;
                     display: flex;
                     visibility: hidden;
