@@ -1,6 +1,6 @@
 import './home.scss';
-import { Carouselle, SlideTemp } from '../../components/index';
-import { img_slider1 , img_slider2 ,img_slider3} from '../../assets/index';
+import { Carouselle, SlideTemp,SimpleCard } from '../../components/index';
+import { img_slider1 , img_slider2 ,img_slider3 , img_women_section} from '../../assets/index';
 const Home = () => {
   return (
     <div className='home'>
@@ -26,7 +26,7 @@ const Home = () => {
               bigTitle = "Save up to 70%"/>
         ]
       } />
-    </div>
+      <SimpleCard image = {img_women_section} buttonText = "Women"/>   </div>
   )
 }
 

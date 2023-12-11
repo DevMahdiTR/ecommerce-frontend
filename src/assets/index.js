@@ -4,3 +4,7 @@ export {default as women} from './images/women.jpg';
 export {default as img_slider1} from './images/slider-01.webp';
 export {default as img_slider2} from './images/slide2.webp';
 export {default as img_slider3} from './images/slide3.webp';
+export {default as img_watch_section} from './images/watch-section.webp';
+export {default as img_women_section} from './images/women-section.webp';
+export {default as img_bag_section} from './images/bag-section.webp';
+export {default as img_shoes_section} from './images/shoes-section.jpg';

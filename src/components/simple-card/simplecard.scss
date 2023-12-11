@@ -1,0 +1,39 @@
+.simple-card{
+    height: 600px;
+    width: 540px;
+    position: relative;
+    overflow: hidden;
+    &:hover{
+        .simple-card__background{
+            transform: scale(1.1);
+        }
+    }
+    .simple-card__background{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: transform var(--duration-extra-long) ease-out;
+    }
+    .simple-card__btn{
+        position: absolute;
+        bottom: 5%;
+        right:50%;
+        transform: translateX(50%);
+        text-decoration: none;
+        color:#222222;
+        padding: 0.5em 2em;
+        background-color: #fff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: 
+            background-color var(--duration-short) ease-in-out,
+            color var(--duration-short) ease-in-out;
+    
+        &:hover{
+            background-color: hsl(0, 0%, 13%);
+            color: #fff;
+           
+        }   
+    }
+}
