@@ -1,5 +1,5 @@
-import './slidetemp1.scss';
-const SlideTemp1 = ({position , animation , image , smallTitle , bigTitle}) => {
+import './slidetemp.scss';
+const SlideTemp = ({position , animation , image , smallTitle , bigTitle}) => {
   const style = position === "right" ? { alignItems: 'flex-end', right: '18%' } : { alignItems: 'flex-start', left: '15%' };
   const animations = ["animation-1" , "animation-2" , "animation-3"];
   const animationInStore = () => {
@@ -26,4 +26,4 @@ const SlideTemp1 = ({position , animation , image , smallTitle , bigTitle}) => {
   )
 }
 
-export default SlideTemp1
+export default SlideTemp

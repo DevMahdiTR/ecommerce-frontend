@@ -1,24 +1,24 @@
 import './home.scss';
-import { Carouselle, SlideTemp1 } from '../../components/index';
+import { Carouselle, SlideTemp } from '../../components/index';
 import { img_slider1 , img_slider2 ,img_slider3} from '../../assets/index';
 const Home = () => {
   return (
     <div className='home'>
       <Carouselle slides={
         [
-          <SlideTemp1 
+          <SlideTemp
               position="left" 
               animation="animation-1" 
               image={img_slider1} 
               smallTitle = "SUMMBER 2023"
               bigTitle = "New Arrival Collection"/>,
-          <SlideTemp1 
+          <SlideTemp 
               position="right"
               animation="animation-2" 
               image={img_slider3}
               smallTitle = "NEW SEASON"
               bigTitle = "Lookbook Collection"/>,
-          <SlideTemp1 
+          <SlideTemp
               position="left" 
               animation="animation-3" 
               image={img_slider2}

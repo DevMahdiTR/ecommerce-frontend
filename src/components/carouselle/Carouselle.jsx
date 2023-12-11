@@ -13,10 +13,10 @@ const Carouselle = ({ slides }) => {
     if (dragStartX) {
       const deltaX = event.clientX - dragStartX;
       if (deltaX > 50) {
-        nextSlide();
+        prevSlide();
         setDragStartX(0);
       } else if (deltaX < -50) {
-        prevSlide();
+        nextSlide();
         setDragStartX(0);
       }
     }

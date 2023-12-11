@@ -4,7 +4,6 @@ import { HeartOutlined, SearchOutlined, ShoppingCartOutlined, UserOutlined, Clos
 import { SearchActions } from '../../redux/index'
 import store from '../../redux/store';
 import { Form, Input } from 'antd';
-import axios from 'axios';
 
 
 
