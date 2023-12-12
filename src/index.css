@@ -49,6 +49,8 @@ code {
   --color-navigation-hoverd :#222222;
   --color-navigation-not-hovered :#222222c0;
 
+  --animation-fade-in:cubic-bezier(0, 0, .3, 1);
+
   
 
 

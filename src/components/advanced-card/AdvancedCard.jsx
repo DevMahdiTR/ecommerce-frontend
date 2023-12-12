@@ -1,12 +1,21 @@
 import './advancedcard.scss';
-import {img_product_1_1 , img_product_1_2} from '../../assets/index';
 import {HeartOutlined , SwapOutlined , ShoppingCartOutlined , EyeOutlined } from '@ant-design/icons';
-const AdvancedCard = () => {
+const AdvancedCard = ({title,price,img1,img2,reduction,newItem,reductionValue, sizes}) => {
+  const newOrReduction = () => {
+    if(newItem){
+      return "new-item";
+    }
+    if(reduction){
+      return "reduction";
+    }
+    return "";
+  }
+  
   return (
-    <div className='advanced-card'>
+    <div className={'advanced-card '+ newOrReduction()} data-reduction = {reductionValue?reductionValue:"0"}>
       <div className="top-side">
-        <img src={img_product_1_1} alt=""className = "image-1" />
-        <img src={img_product_1_2} alt=""className = "image-2" />
+        <img src={img1} alt=""className = "image-1" />
+        <img src={img2} alt=""className = "image-2" />
         <div className="advanced-card__btns">
           <a className="btn__primary">
             <span className='btn__text'>Quick view</span>
@@ -18,16 +27,16 @@ const AdvancedCard = () => {
           </a>
         </div>
         <div className="product-sizes">
-          <span>XS, S, M, L, XL</span>
+          <span>{sizes}</span>
         </div>
         <div className="advanced-card__icons">
-          <HeartOutlined  className='card-icon'/>
-          <SwapOutlined className='card-icon' />
+          <HeartOutlined  className='card-icon icon-1'/>
+          <SwapOutlined className='card-icon icon-2' />
         </div>
       </div>
       <div className="bottom-side">
-        <a href="">Analogue Resin Strap</a>
-        <span>$99.00</span>
+        <a href="">{title}</a>
+        <span>{price}</span>
       </div>
 
     </div>

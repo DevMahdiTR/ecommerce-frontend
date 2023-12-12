@@ -1,6 +1,6 @@
 import './home.scss';
 import { Carouselle, SlideTemp, SectionLayout, AdvancedCard } from '../../components/index';
-import { img_slider1, img_slider2, img_slider3, img_women_section } from '../../assets/index';
+import { img_slider1, img_slider2, img_slider3, img_women_section, img_product_1_1, img_product_1_2 } from '../../assets/index';
 const Home = () => {
   return (
     <div className='home'>
@@ -28,7 +28,15 @@ const Home = () => {
       } />
 
       <SectionLayout />
-      <AdvancedCard />
+      <AdvancedCard 
+        img1={img_product_1_1}
+        img2={img_product_1_2}
+        title="Cotton T-Shirt"
+        price="$29.99"
+        reduction={true}
+        reductionValue="20%"
+        sizes="XS, S, M, L, XL"
+      />
     </div>
 
   )
