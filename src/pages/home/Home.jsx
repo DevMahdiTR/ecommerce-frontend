@@ -1,5 +1,5 @@
 import './home.scss';
-import { Carouselle, SlideTemp, SectionLayout } from '../../components/index';
+import { Carouselle, SlideTemp, SectionLayout, AdvancedCard } from '../../components/index';
 import { img_slider1, img_slider2, img_slider3, img_women_section } from '../../assets/index';
 const Home = () => {
   return (
@@ -28,6 +28,7 @@ const Home = () => {
       } />
 
       <SectionLayout />
+      <AdvancedCard />
     </div>
 
   )

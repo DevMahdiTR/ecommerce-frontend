@@ -8,3 +8,5 @@ export {default as img_watch_section} from './images/watch-section.webp';
 export {default as img_women_section} from './images/women-section.webp';
 export {default as img_bag_section} from './images/bag-section.webp';
 export {default as img_shoes_section} from './images/shoes-section.jpg';
+export {default as img_product_1_1} from './images/product-1-2.webp';
+export {default as img_product_1_2} from './images/product-1-1.webp';
