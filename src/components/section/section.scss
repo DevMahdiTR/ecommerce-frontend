@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap");
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .section-container__header {
+        display: inherit;
+        flex-direction: inherit;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        .title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            gap: 0.5em;
+            margin: 0;
+            .left,
+            .right {
+                height: 2px;
+                width: 60px;
+                background-color: #000;
+            }
+        }
+        .sub-title {
+            font-size: 15px;
+            font-family: "Libre Baskerville", serif;
+            color: #878787;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+    .box-container {
+        margin-top: 2em;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 1204px) {
+    .section-container {
+        .box-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
