@@ -38,7 +38,7 @@ const Home = () => {
         sizes="XS, S, M, L, XL"
       />
 
-      <Section/>
+    
     </div>
 
   )
